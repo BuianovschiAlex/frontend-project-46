@@ -2,7 +2,7 @@ import path from 'node:path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
-import { buildTree } from './index.js';
+import { buildTree, changedDiffTree } from './index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,5 +16,5 @@ export const genDiff = (filepath1, filepath2) => {
     const content = fs.readFileSync(fullPath, 'utf-8');
     return JSON.parse(content);
   });
-  return buildTree(dataInFile);
+  return changedDiffTree(buildTree(dataInFile));
 };
