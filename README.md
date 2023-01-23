@@ -10,5 +10,8 @@
 ### Run Gendiff Example(JSON):
 [![asciicast](https://asciinema.org/a/551395.svg)](https://asciinema.org/a/551395)
 
-### Run Gendiff Example(JSON and Ymal/Yml):
+### Run Gendiff Example((Flat)JSON and Yaml/Yml):
 [![asciicast](https://asciinema.org/a/552520.svg)](https://asciinema.org/a/552520)
+
+### Run Gendiff Example(Stylish(nested) JSON and Yaml/Yml):
+[![asciicast](https://asciinema.org/a/553608.svg)](https://asciinema.org/a/553608)

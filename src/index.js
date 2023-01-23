@@ -1,16 +1,21 @@
 import path from 'node:path';
-import fs from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import parse from './parses.js';
-import { buildTree, changedDiffTree } from './buildTree.js';
+import buildTree from './buildTree.js';
+import formatOutput from './formatters/index.js';
 
-const getExtension = (filepath) => path.extname(filepath);
-const readFileSync = (filepath) => fs.readFileSync(filepath, 'utf-8');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-export default (filepath1, filepath2) => {
-  const extension1 = getExtension(filepath1);
-  const extension2 = getExtension(filepath2);
-  const parsedFile1 = parse(readFileSync((filepath1)), extension1);
-  const parsedFile2 = parse(readFileSync((filepath2)), extension2);
+export const getFixturesPath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-  return changedDiffTree(buildTree(parsedFile1, parsedFile2));
+const dataInFile = (filepath) => {
+  const fullPath = getFixturesPath(filepath);
+  return parse(fullPath);
+};
+
+export const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
+  const tree = buildTree(dataInFile(filepath1), dataInFile(filepath2));
+  return formatOutput(tree, formatName);
 };
