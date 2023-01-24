@@ -6,7 +6,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "description": "[![Actions Status](https://github.com/BuianovschiAlex/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/BuianovschiAlex/frontend-project-46/actions)",
-  "main": "bin/gendiff.js",
+  "main": "index.js",
   "scripts": {
     "test": "npx jest",
     "test1": "echo \"Error: no test specified\" && exit 1"
