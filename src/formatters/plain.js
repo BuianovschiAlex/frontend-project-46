@@ -13,26 +13,26 @@ const stringifyData = (data) => {
   return data;
 };
 
-export default (nodes) => {
-  const iter = (node, path = '') => {
+const makePlain = (nodes, path = '') => nodes
+  .flatMap((node) => {
     const {
-      name, value, type, children, oldValue,
+      key, value, oldValue, newValue, type, children,
     } = node;
     switch (type) {
       case 'added':
-        return `Property '${path}${name}' was added with value: ${stringifyData(value)}`;
+        return `Property '${path}${key}' was added with value: ${stringifyData(value)}`;
       case 'removed':
-        return `Property '${path}${name}' was removed`;
-      case 'nested':
-        return children.flatMap((child) => iter(child, `${path}${name}.`)).join('\n');
+        return `Property '${path}${key}' was removed`;
       case 'updated':
-        return `Property '${path}${name}' was updated. From ${stringifyData(oldValue)} to ${stringifyData(value)}`;
+        return `Property '${path}${key}' was updated. From ${stringifyData(oldValue)} to ${stringifyData(newValue)}`;
+      case 'nested':
+        return makePlain(children, `${path}${key}.`);
       case 'unchanged':
         return [];
       default:
         throw new Error(`Unknown status type ${type}`);
     }
-  };
-  const result = nodes.flatMap((node) => iter(node));
-  return `${result.join('\n')}`;
-};
+  })
+  .join('\n');
+
+export default makePlain;
