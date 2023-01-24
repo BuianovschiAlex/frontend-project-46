@@ -7,11 +7,17 @@
 
 [![.github/workflows/nodejs.yml](https://github.com/BuianovschiAlex/frontend-project-46/actions/workflows/nodejs.yml/badge.svg)](https://github.com/BuianovschiAlex/frontend-project-46/actions/workflows/nodejs.yml)
 
-### Run Gendiff Example(JSON):
+### Examples
+
+
+## Run Gendiff Example(JSON):
 [![asciicast](https://asciinema.org/a/551395.svg)](https://asciinema.org/a/551395)
 
-### Run Gendiff Example((Flat)JSON and Yaml/Yml):
+## Run Gendiff Example(Difference between 2 flat JSON or YAML files):
 [![asciicast](https://asciinema.org/a/552520.svg)](https://asciinema.org/a/552520)
 
-### Run Gendiff Example(Stylish(nested) JSON and Yaml/Yml):
+## Run Gendiff Example(Difference between 2 nested JSON or YAML files in a stylish format):
 [![asciicast](https://asciinema.org/a/553608.svg)](https://asciinema.org/a/553608)
+
+## Run Gendiff Example(Difference between 2 nested JSON or YAML files in a plain format):
+[![asciicast](https://asciinema.org/a/553904.svg)](https://asciinema.org/a/553904)
