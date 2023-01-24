@@ -33,12 +33,6 @@ $ cd frontend-project-46
 $ make install
 ```
 
-#### If you want to install package globally in your system you should run:
-
-  ```bash
-$ make link
-```
-
 ### Tests and linters:
 
   ```bash
