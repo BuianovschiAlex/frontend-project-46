@@ -3,6 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/84572fac80b17a216d52/maintainability)](https://codeclimate.com/github/BuianovschiAlex/frontend-project-46/maintainability)
 
+
 [![Test Coverage](https://api.codeclimate.com/v1/badges/84572fac80b17a216d52/test_coverage)](https://codeclimate.com/github/BuianovschiAlex/frontend-project-46/test_coverage)
 
 [![.github/workflows/nodejs.yml](https://github.com/BuianovschiAlex/frontend-project-46/actions/workflows/nodejs.yml/badge.svg)](https://github.com/BuianovschiAlex/frontend-project-46/actions/workflows/nodejs.yml)
