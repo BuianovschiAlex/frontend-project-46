@@ -12,7 +12,8 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath), 'utf-8').trim();
 
 const expectedStylish = readFile('expectedStylish.txt');
-const plainFile = readFile('expectedPlain.txt');
+const expectedPlain = readFile('expectedPlain.txt');
+const expectedJson = readFile('expectedJson.txt');
 
 const filepath1Json = getFixturePath('file1.json');
 const filepath2Json = getFixturePath('file2.json');
@@ -39,18 +40,36 @@ describe('gendiff function (stylish)', () => {
 
 describe('gendiff function (plain)', () => {
   test('between json-json files', () => {
-    expect(genDiff(filepath1Json, filepath2Json, 'plain')).toEqual(plainFile);
+    expect(genDiff(filepath1Json, filepath2Json, 'plain')).toEqual(expectedPlain);
   });
 
   test('between yml-yaml files', () => {
-    expect(genDiff(filepath1Yml, filepath2Yaml, 'plain')).toEqual(plainFile);
+    expect(genDiff(filepath1Yml, filepath2Yaml, 'plain')).toEqual(expectedPlain);
   });
 
   test('between json-yaml files', () => {
-    expect(genDiff(filepath1Json, filepath2Yaml, 'plain')).toEqual(plainFile);
+    expect(genDiff(filepath1Json, filepath2Yaml, 'plain')).toEqual(expectedPlain);
   });
 
   test('between json-yml files', () => {
-    expect(genDiff(filepath1Yml, filepath2Json, 'plain')).toEqual(plainFile);
+    expect(genDiff(filepath1Yml, filepath2Json, 'plain')).toEqual(expectedPlain);
+  });
+});
+
+describe('gendiff function (Json)', () => {
+  test('between json-json files', () => {
+    expect(genDiff(filepath1Json, filepath2Json, 'json')).toEqual(expectedJson);
+  });
+
+  test('between yml-yaml files', () => {
+    expect(genDiff(filepath1Yml, filepath2Yaml, 'json')).toEqual(expectedJson);
+  });
+
+  test('between json-yaml files', () => {
+    expect(genDiff(filepath1Json, filepath2Yaml, 'json')).toEqual(expectedJson);
+  });
+
+  test('between json-yml files', () => {
+    expect(genDiff(filepath1Yml, filepath2Json, 'json')).toEqual(expectedJson);
   });
 });

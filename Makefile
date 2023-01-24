@@ -41,3 +41,16 @@ json-yaml-diff-plain:
 
 json-yml-diff-plain:
 	gendiff --format plain __fixtures__/file1.yml __fixtures__/file2.json
+
+## Json
+json-diff-json:
+	gendiff --format json __fixtures__/file1.json __fixtures__/file2.json
+
+yml-yaml-diff-json:
+	gendiff --format json __fixtures__/file1.yml __fixtures__/file2.yaml
+
+json-yaml-diff-json:
+	gendiff --format json __fixtures__/file1.json __fixtures__/file2.yaml
+
+json-yml-diff-json:
+	gendiff --format json __fixtures__/file1.yml __fixtures__/file2.json

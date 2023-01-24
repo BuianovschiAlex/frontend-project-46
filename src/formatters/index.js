@@ -8,5 +8,8 @@ export default (tree, format) => {
   if (format === 'plain') {
     return makePlain(tree);
   }
+  if (format === 'json') {
+    return JSON.stringify(tree);
+  }
   throw new Error(`Unknown format: ${format}`);
 };
