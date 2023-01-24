@@ -10,7 +10,7 @@
 
 ## Description
 
-<p><b>Difference generator</b> - a program which determines differences between two data structures, generates a report and format an output in different ways. It takes a JSON/YAML files as input and outputs as stylish/plain/json format.</p>
+#### Difference generator</b> - a program which determines differences between two data structures, generates a report and format an output in different ways. It takes a JSON/YAML files as input and outputs as stylish/plain/json format.
 
 
 ## Installation
