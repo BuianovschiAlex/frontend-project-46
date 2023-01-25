@@ -2,14 +2,14 @@ import makeStylish from './stylish.js';
 import makePlain from './plain.js';
 
 export default (tree, format) => {
-  if (format === 'stylish') {
-    return makeStylish(tree);
+  switch (format) {
+    case 'stylish':
+      return makeStylish(tree);
+    case 'plain':
+      return makePlain(tree);
+    case 'json':
+      return JSON.stringify(tree);
+    default:
+      throw new Error(`Unknown format: ${format}`);
   }
-  if (format === 'plain') {
-    return makePlain(tree);
-  }
-  if (format === 'json') {
-    return JSON.stringify(tree);
-  }
-  throw new Error(`Unknown format: ${format}`);
 };

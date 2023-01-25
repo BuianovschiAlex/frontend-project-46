@@ -14,7 +14,7 @@ const buildTree = (file1, file2) => {
     if (!Object.hasOwn(file2, key)) {
       return { key, value: value1, type: 'removed' };
     }
-    if (value1 !== value2) {
+    if (!_.isEqual(value1, value2)) {
       return {
         key,
         oldValue: value1,

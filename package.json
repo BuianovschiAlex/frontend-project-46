@@ -5,7 +5,7 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-  "description": "[![Actions Status](https://github.com/BuianovschiAlex/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/BuianovschiAlex/frontend-project-46/actions)",
+  "description": "Difference generator",
   "main": "src/index.js",
   "scripts": {
     "test": "npx jest",

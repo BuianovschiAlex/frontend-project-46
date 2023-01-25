@@ -4,9 +4,6 @@ const stringifyData = (data) => {
   if (_.isObject(data)) {
     return '[complex value]';
   }
-  if (data === null) {
-    return 'null';
-  }
   if (typeof data === 'string') {
     return `'${data}'`;
   }
