@@ -7,7 +7,7 @@ const stringifyData = (data) => {
   if (typeof data === 'string') {
     return `'${data}'`;
   }
-  return data;
+  return String(data);
 };
 
 const makePlain = (nodes, path = '') => nodes
